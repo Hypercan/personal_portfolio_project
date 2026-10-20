@@ -6,10 +6,10 @@ import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 
 const NAV_ITEMS = [
-  { label: "ANASAYFA", href: "/" },
-  { label: "HAKKIMDA", href: "/hakkimda" },
-  { label: "PROJELER", href: "/projeler" },
-  { label: "YAZILAR", href: "/yazilar" },
+  { label: "HOME", href: "/" },
+  { label: "ABOUT", href: "/hakkimda" },
+  { label: "PROJECTS", href: "/projeler" },
+  { label: "ARTICLES", href: "/yazilar" },
 ];
 
 export default function Navbar() {
@@ -74,7 +74,7 @@ export default function Navbar() {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle navigation menu"
         >
-          {mobileOpen ? "✕ KAPAT" : "☰ MENÜ"}
+          {mobileOpen ? "✕ CLOSE" : "☰ MENU"}
         </button>
       </nav>
     </header>

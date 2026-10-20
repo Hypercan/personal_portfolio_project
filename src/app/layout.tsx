@@ -5,8 +5,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "PUNK ZINE // KIŞISEL PORTFOLYO",
-  description: "Regular Show neo-punk zine esintili kişisel portfolyo, projeler ve yazılar.",
+  title: "PUNK ZINE // FIRAT CAN KARAKOÇ - CREATIVE DEVELOPER",
+  description:
+    "Regular Show neo-punk zine inspired personal portfolio, intelligent agents, cognitive tools, and experimental code by Fırat Can Karakoç.",
 };
 
 export default function RootLayout({
@@ -15,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr">
+    <html lang="en">
       <body>
         <PunkCursor />
         <Navbar />

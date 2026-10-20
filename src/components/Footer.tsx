@@ -58,7 +58,7 @@ export default function Footer() {
             </a>
 
             <a href="mailto:fcankarakoc@gmail.com" className={styles.socialBtn}>
-              <Mail size={18} /> ILETISIM
+              <Mail size={18} /> CONTACT
             </a>
           </div>
         </div>
