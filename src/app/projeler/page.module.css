@@ -1,0 +1,349 @@
+/* ===========================
+   PROJELER / TRACKS PAGE
+   Punk Zine Aesthetic
+   =========================== */
+
+.main {
+  min-height: 80vh;
+  padding: 20px 20px 60px;
+}
+
+/* Header Section */
+.headerSection {
+  padding: 40px 0 50px;
+  border-bottom: 3px dashed var(--street-gray);
+  margin-bottom: 50px;
+}
+
+.headerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--neon-yellow);
+  color: var(--ink-black);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  padding: 6px 16px;
+  font-family: var(--font-marker);
+  font-size: 0.95rem;
+  transform: rotate(-1.5deg);
+  margin-bottom: 20px;
+}
+
+.pageTitle {
+  font-family: var(--font-comic);
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--neon-yellow);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 0.95;
+  text-shadow: 
+    4px 4px 0px var(--ink-black),
+    8px 8px 0px var(--neon-pink);
+  margin-bottom: 18px;
+}
+
+.titleAlt {
+  color: var(--paper-cream);
+  display: inline-block;
+}
+
+.pageSubtitle {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--wall-gray);
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+/* Filter Bar */
+.filterBar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-comic);
+  font-size: 1.15rem;
+  padding: 8px 18px;
+  background: var(--panel-dark);
+  color: var(--paper-cream);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  cursor: none;
+  transition: all 0.15s ease;
+  letter-spacing: 0.5px;
+}
+
+.filterBtn:hover {
+  background: var(--neon-yellow);
+  color: var(--ink-black);
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px var(--neon-pink);
+}
+
+.filterBtnActive {
+  background: var(--neon-pink);
+  color: #ffffff;
+  border-color: var(--ink-black);
+  box-shadow: 5px 5px 0px var(--neon-yellow);
+}
+
+.countBadge {
+  background: var(--ink-black);
+  color: var(--neon-yellow);
+  padding: 2px 7px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  border-radius: 2px;
+}
+
+.filterBtnActive .countBadge {
+  background: #ffffff;
+  color: var(--ink-black);
+}
+
+/* Projects Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 36px;
+  margin-bottom: 70px;
+}
+
+/* Project Card */
+.projectCard {
+  background: var(--panel-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 10px 10px 0px var(--neon-yellow);
+}
+
+/* Tape on top left */
+.cardTape {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  width: 55px;
+  height: 18px;
+  background: var(--tape-yellow);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: rotate(-4deg);
+  z-index: 10;
+}
+
+/* Mockup Header Graphic */
+.mockupHeader {
+  height: 140px;
+  border-bottom: var(--border-thick);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px;
+  overflow: hidden;
+}
+
+.mockupOverlay {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mockupDots {
+  display: flex;
+  gap: 4px;
+}
+
+.mockupDots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mockupTitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.5px;
+}
+
+.badgeWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.catBadge {
+  font-family: var(--font-marker);
+  font-size: 0.8rem;
+  background: var(--ink-black);
+  color: var(--neon-yellow);
+  padding: 4px 10px;
+  border: 2px solid var(--neon-pink);
+  transform: rotate(2deg);
+}
+
+/* Card Body */
+.cardBody {
+  padding: 24px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTag {
+  font-family: var(--font-marker);
+  font-size: 0.85rem;
+  color: var(--neon-pink);
+  margin-bottom: 8px;
+  display: inline-block;
+}
+
+.projectTitle {
+  font-family: var(--font-comic);
+  font-size: 2rem;
+  color: var(--paper-cream);
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.projectDesc {
+  font-family: var(--font-body);
+  color: var(--wall-gray);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Card Footer */
+.cardFooter {
+  padding: 16px 24px;
+  border-top: 1px dashed var(--street-gray);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.gitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-comic);
+  font-size: 1.05rem;
+  color: var(--paper-cream);
+  padding: 8px 14px;
+  border: 2px solid var(--street-gray);
+  background: var(--panel-dark);
+  transition: all 0.15s ease;
+  letter-spacing: 0.5px;
+  cursor: none;
+}
+
+.gitBtn:hover {
+  background: var(--neon-pink);
+  color: #ffffff;
+  border-color: var(--neon-pink);
+  transform: translateY(-2px);
+}
+
+/* Bottom CTA Box */
+.bottomCtaBox {
+  background: var(--panel-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  padding: 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bottomCtaBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--neon-pink),
+    var(--neon-yellow),
+    var(--accent-cyan)
+  );
+}
+
+.bottomCtaInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.bottomCtaTitle {
+  font-family: var(--font-comic);
+  font-size: 2.2rem;
+  color: var(--neon-yellow);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.bottomCtaText {
+  font-family: var(--font-body);
+  color: var(--wall-gray);
+  font-size: 1.05rem;
+}
+
+.bottomCtaActions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bottomCtaInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottomCtaActions {
+    width: 100%;
+  }
+
+  .bottomCtaActions a {
+    width: 100%;
+    justify-content: center;
+  }
+}
