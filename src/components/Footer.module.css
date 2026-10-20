@@ -1,0 +1,110 @@
+.footer {
+  margin-top: 80px;
+  background: var(--ink-black);
+  border-top: 4px solid var(--neon-pink);
+  padding: 50px 20px 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--neon-yellow);
+}
+
+.footerInner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footerBrand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerLogo {
+  font-family: var(--font-comic);
+  font-size: 2.2rem;
+  color: var(--neon-yellow);
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 0px var(--neon-pink);
+}
+
+.footerTagline {
+  font-family: var(--font-marker);
+  color: var(--wall-gray);
+  font-size: 1rem;
+}
+
+.socialList {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.socialBtn {
+  font-family: var(--font-comic);
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  background: var(--street-gray);
+  color: var(--paper-cream);
+  border: 2px solid var(--neon-yellow);
+  box-shadow: 3px 3px 0px var(--neon-yellow);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.socialBtn:hover {
+  background: var(--neon-pink);
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 4px 4px 0px #ffffff;
+  transform: translateY(-2px) rotate(1deg);
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--street-gray);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--wall-gray);
+}
+
+.stickersRow {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.zineBadge {
+  font-family: var(--font-marker);
+  font-size: 0.8rem;
+  padding: 3px 8px;
+  background: var(--neon-pink);
+  color: #fff;
+  transform: rotate(-3deg);
+}

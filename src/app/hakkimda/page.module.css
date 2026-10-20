@@ -1,0 +1,618 @@
+/* ===========================
+   HAKKIMDA / ABOUT PAGE
+   Punk Zine Aesthetic
+   =========================== */
+
+/* ---------- HERO SECTION ---------- */
+.heroSection {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroBgImg {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.15;
+  filter: grayscale(60%);
+}
+
+.heroBgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0.7) 0%,
+    rgba(17, 17, 17, 0.95) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  max-width: 1140px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.45fr 0.55fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.heroImageCol {
+  display: flex;
+  justify-content: center;
+}
+
+/* Polaroid Frame */
+.polaroidFrame {
+  position: relative;
+  background: var(--paper-cream);
+  border: 4px solid var(--ink-black);
+  box-shadow: 12px 12px 0px var(--ink-black);
+  padding: 14px 14px 8px;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 340px;
+  width: 100%;
+}
+
+.polaroidFrame:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 14px 14px 0px var(--neon-pink);
+}
+
+.tapeTopLeft {
+  position: absolute;
+  top: -14px;
+  left: -12px;
+  width: 70px;
+  height: 22px;
+  background: var(--tape-yellow);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(-25deg);
+  z-index: 15;
+}
+
+.tapeBottomRight {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 70px;
+  height: 22px;
+  background: var(--tape-yellow);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transform: rotate(18deg);
+  z-index: 15;
+}
+
+.heroAvatar {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 3px solid var(--ink-black);
+}
+
+.polaroidCaption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.captionName {
+  font-family: var(--font-comic);
+  font-size: 1.4rem;
+  color: var(--ink-black);
+  letter-spacing: 1px;
+}
+
+.captionTag {
+  background: var(--neon-pink);
+  color: #ffffff;
+  padding: 3px 8px;
+  font-family: var(--font-marker);
+  font-size: 0.8rem;
+  border: 2px solid var(--ink-black);
+  transform: rotate(-3deg);
+}
+
+/* Hero Text Column */
+.heroTextCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.roleSticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--neon-yellow);
+  color: var(--ink-black);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  padding: 6px 16px;
+  font-family: var(--font-marker);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transform: rotate(-1.5deg);
+  width: fit-content;
+}
+
+.pageTitle {
+  font-family: var(--font-comic);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  color: var(--neon-yellow);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-shadow: 4px 4px 0px var(--ink-black),
+    8px 8px 0px var(--neon-pink);
+}
+
+.titleAccent {
+  color: var(--paper-cream);
+  display: block;
+}
+
+.introText {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  color: var(--wall-gray);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.introText strong {
+  color: var(--paper-cream);
+}
+
+.mottoHighlight {
+  color: var(--neon-yellow);
+  font-weight: 700;
+}
+
+.heroCta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* ---------- SHARED SECTION ---------- */
+.section {
+  padding: 70px 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  border-bottom: 3px dashed var(--street-gray);
+  padding-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.sectionTitle {
+  font-family: var(--font-comic);
+  font-size: 2.8rem;
+  color: var(--neon-yellow);
+  text-shadow: 3px 3px 0px var(--neon-pink);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sectionBadge {
+  font-family: var(--font-marker);
+  font-size: 0.9rem;
+  background: var(--neon-pink);
+  color: #fff;
+  padding: 4px 10px;
+  border: 2px solid var(--ink-black);
+  transform: rotate(-3deg);
+}
+
+/* ---------- ORIGIN STORY ---------- */
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--wall-gray);
+  line-height: 1.75;
+}
+
+.storyText strong {
+  color: var(--paper-cream);
+}
+
+.storyText em {
+  color: var(--neon-yellow);
+  font-style: italic;
+}
+
+.storyImageWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.storyPolaroid {
+  background: var(--paper-cream);
+  border: 4px solid var(--ink-black);
+  box-shadow: 10px 10px 0px var(--ink-black);
+  padding: 12px 12px 8px;
+  transform: rotate(2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 320px;
+}
+
+.storyPolaroid:hover {
+  transform: rotate(0deg) scale(1.02);
+  box-shadow: 12px 12px 0px var(--neon-yellow);
+}
+
+.storyImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 3px solid var(--ink-black);
+}
+
+.storyPolaroidLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 8px;
+  font-family: var(--font-marker);
+  font-size: 0.9rem;
+  color: var(--ink-black);
+}
+
+/* ---------- SKILL TREE ---------- */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.skillItem {
+  background: var(--panel-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.skillItem:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px var(--neon-yellow);
+}
+
+.skillInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skillName {
+  font-family: var(--font-comic);
+  font-size: 1.3rem;
+  color: var(--paper-cream);
+  letter-spacing: 0.5px;
+}
+
+.skillLevel {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--neon-yellow);
+}
+
+.skillBarBg {
+  width: 100%;
+  height: 14px;
+  background: var(--street-gray);
+  border: 2px solid var(--ink-black);
+  position: relative;
+  overflow: hidden;
+}
+
+.skillBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-yellow));
+  transition: width 0.6s ease-out;
+}
+
+/* ---------- TECH STACK ---------- */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.techCard {
+  background: var(--panel-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  padding: 24px;
+  transition: transform 0.2s ease;
+}
+
+.techCard:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px var(--neon-pink);
+}
+
+.techCategory {
+  font-family: var(--font-comic);
+  font-size: 1.4rem;
+  color: var(--neon-yellow);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px dashed var(--street-gray);
+}
+
+.techItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ---------- INTERESTS ---------- */
+.interestsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+.interestCard {
+  background: var(--panel-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 6px solid var(--neon-pink);
+}
+
+.interestCard:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px var(--neon-yellow);
+}
+
+.interestIcon {
+  color: var(--neon-yellow);
+  width: fit-content;
+  background: var(--street-gray);
+  padding: 10px;
+  border: 2px solid var(--ink-black);
+  box-shadow: 3px 3px 0px var(--ink-black);
+}
+
+.interestTitle {
+  font-family: var(--font-comic);
+  font-size: 1.4rem;
+  color: var(--paper-cream);
+  letter-spacing: 0.5px;
+}
+
+.interestDesc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--wall-gray);
+  line-height: 1.65;
+}
+
+/* ---------- GALLERY BANNER ---------- */
+.galleryBanner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 50px;
+  align-items: center;
+  background: var(--panel-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  padding: 40px;
+}
+
+.galleryImageWrap {
+  max-width: 280px;
+}
+
+.galleryImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 4px solid var(--ink-black);
+  box-shadow: 8px 8px 0px var(--neon-pink);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+}
+
+.galleryImg:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.galleryText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.galleryTitle {
+  font-family: var(--font-comic);
+  font-size: 2.4rem;
+  color: var(--neon-yellow);
+  text-shadow: 3px 3px 0px var(--neon-pink);
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+
+.galleryDesc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--wall-gray);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.galleryStickers {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+/* ---------- CTA BLOCK ---------- */
+.ctaBlock {
+  text-align: center;
+  padding: 60px 30px;
+  background: var(--panel-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBlock::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--neon-pink),
+    var(--neon-yellow),
+    var(--accent-cyan),
+    var(--neon-pink)
+  );
+}
+
+.ctaTitle {
+  font-family: var(--font-comic);
+  font-size: clamp(2.4rem, 4vw, 3.8rem);
+  color: var(--neon-yellow);
+  text-shadow: 4px 4px 0px var(--neon-pink);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.ctaText {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--wall-gray);
+  margin-bottom: 30px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 960px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .heroImageCol {
+    order: -1;
+  }
+
+  .heroTextCol {
+    align-items: center;
+  }
+
+  .roleSticker {
+    transform: rotate(0deg);
+  }
+
+  .introText {
+    max-width: 100%;
+  }
+
+  .heroCta {
+    justify-content: center;
+  }
+
+  .storyGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .storyImageWrap {
+    order: -1;
+  }
+
+  .galleryBanner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .galleryImageWrap {
+    margin: 0 auto;
+  }
+
+  .galleryStickers {
+    justify-content: center;
+  }
+
+  .galleryDesc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageTitle {
+    font-size: 2.2rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .galleryTitle {
+    font-size: 1.8rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaBlock {
+    padding: 40px 20px;
+  }
+}

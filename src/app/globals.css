@@ -1,0 +1,187 @@
+/* ===========================
+   PUNK ZINE DESIGN SYSTEM
+   Regular Show × Neo-Punk × Fanzin
+   =========================== */
+
+/* ---------- Google Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ---------- CSS Variables ---------- */
+:root {
+  /* Core Punk Palette */
+  --neon-pink: #FF007F;
+  --neon-yellow: #E6FF00;
+  --ink-black: #111111;
+  --paper-cream: #FFFDF5;
+  --wall-gray: #B0AFA8;
+  --street-gray: #3A3A3A;
+  --panel-dark: #1A1A1A;
+  --accent-cyan: #00F0FF;
+  --tape-yellow: rgba(255, 232, 83, 0.85);
+
+  /* Fonts */
+  --font-comic: 'Bangers', cursive;
+  --font-marker: 'Permanent Marker', cursive;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+
+  /* Borders & Shadows */
+  --border-thick: 3px solid var(--ink-black);
+  --shadow-hard: 5px 5px 0px var(--ink-black);
+
+  /* Backgrounds */
+  --background: var(--ink-black);
+  --foreground: var(--paper-cream);
+}
+
+/* ---------- Reset & Base ---------- */
+html {
+  height: 100%;
+  cursor: none;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  cursor: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: none;
+}
+
+button {
+  cursor: none;
+}
+
+/* ---------- Container ---------- */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ---------- Punk Button System ---------- */
+.punk-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-comic);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  padding: 10px 22px;
+  background: var(--neon-yellow);
+  color: var(--ink-black);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.punk-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px var(--ink-black);
+  background: var(--accent-cyan);
+}
+
+.punk-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--ink-black);
+}
+
+.punk-btn-pink {
+  background: var(--neon-pink);
+  color: #ffffff;
+}
+
+.punk-btn-pink:hover {
+  background: var(--accent-cyan);
+  color: var(--ink-black);
+}
+
+.punk-btn-outline {
+  background: transparent;
+  color: var(--paper-cream);
+  border: 3px solid var(--paper-cream);
+  box-shadow: none;
+}
+
+.punk-btn-outline:hover {
+  background: var(--paper-cream);
+  color: var(--ink-black);
+  box-shadow: var(--shadow-hard);
+}
+
+/* ---------- Sticker / Tag Pills ---------- */
+.sticker {
+  display: inline-block;
+  font-family: var(--font-marker);
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  background: var(--accent-cyan);
+  color: var(--ink-black);
+  border: 2px solid var(--ink-black);
+  box-shadow: 2px 2px 0px var(--ink-black);
+  transform: rotate(-1deg);
+  white-space: nowrap;
+}
+
+.sticker-dark {
+  background: var(--street-gray);
+  color: var(--paper-cream);
+}
+
+.sticker-yellow {
+  background: var(--neon-yellow);
+  color: var(--ink-black);
+}
+
+.sticker-pink {
+  background: var(--neon-pink);
+  color: #ffffff;
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: var(--neon-pink);
+  color: #ffffff;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ink-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-pink);
+  border: 2px solid var(--ink-black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-yellow);
+}

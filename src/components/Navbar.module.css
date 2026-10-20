@@ -1,0 +1,188 @@
+.header {
+  position: sticky;
+  top: 14px;
+  z-index: 1000;
+  width: 100%;
+  padding: 0 16px;
+  margin-bottom: 30px;
+}
+
+.ticketNav {
+  max-width: 1140px;
+  margin: 0 auto;
+  background: var(--paper-cream);
+  color: var(--ink-black);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ticketNav:hover {
+  box-shadow: 7px 7px 0px var(--neon-pink);
+}
+
+/* Ticket Stub / Perforated left edge */
+.stubLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-right: 18px;
+  border-right: 2px dashed var(--ink-black);
+}
+
+.barcode {
+  display: flex;
+  gap: 2px;
+  height: 24px;
+  align-items: center;
+}
+
+.barThin {
+  width: 2px;
+  height: 100%;
+  background: var(--ink-black);
+}
+
+.barThick {
+  width: 4px;
+  height: 100%;
+  background: var(--ink-black);
+}
+
+.ticketCode {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoText {
+  font-family: var(--font-comic);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  color: var(--ink-black);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  line-height: 1;
+}
+
+.logoBadge {
+  background: var(--neon-pink);
+  color: #ffffff;
+  padding: 2px 8px;
+  font-family: var(--font-marker);
+  font-size: 0.8rem;
+  transform: rotate(-4deg);
+  border: 2px solid var(--ink-black);
+  box-shadow: 2px 2px 0px var(--ink-black);
+}
+
+/* Navigation Links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navItem {
+  font-family: var(--font-comic);
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
+  padding: 6px 14px;
+  color: var(--ink-black);
+  border: 2px solid transparent;
+  transition: all 0.15s ease;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.navItem:hover {
+  background: var(--neon-yellow);
+  border: 2px solid var(--ink-black);
+  box-shadow: 3px 3px 0px var(--ink-black);
+  transform: translateY(-2px) rotate(-1deg);
+}
+
+.navItemActive {
+  background: var(--neon-pink);
+  color: #ffffff;
+  border: 2px solid var(--ink-black);
+  box-shadow: 3px 3px 0px var(--ink-black);
+  transform: rotate(1deg);
+}
+
+.ticketStubRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 18px;
+  border-left: 2px dashed var(--ink-black);
+}
+
+.vipBadge {
+  background: var(--neon-yellow);
+  color: var(--ink-black);
+  font-family: var(--font-comic);
+  font-size: 1rem;
+  padding: 4px 10px;
+  border: 2px solid var(--ink-black);
+  box-shadow: 2px 2px 0px var(--ink-black);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+/* Mobile Toggle */
+.mobileMenuBtn {
+  display: none;
+  background: var(--neon-yellow);
+  border: 2px solid var(--ink-black);
+  padding: 6px 10px;
+  font-family: var(--font-comic);
+  cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  .stubLeft, .ticketStubRight {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--paper-cream);
+    border: var(--border-thick);
+    border-top: none;
+    flex-direction: column;
+    padding: 16px;
+    gap: 12px;
+    box-shadow: var(--shadow-hard);
+  }
+
+  .navLinksOpen {
+    display: flex;
+  }
+
+  .navItem {
+    width: 100%;
+    text-align: center;
+  }
+}
