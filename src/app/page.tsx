@@ -165,9 +165,9 @@ export default function Home() {
             </div>
             <div className={styles.cardFooter}>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", color: "var(--wall-gray)" }}>
-                5 dk okuma süresi
+                4 min read
               </span>
-              <Link href="/yazilar" className="punk-btn punk-btn-pink" style={{ padding: "6px 12px", fontSize: "1rem" }}>
+              <Link href="/yazilar/rethinking-creative-developer-portfolios" className="punk-btn punk-btn-pink" style={{ padding: "6px 12px", fontSize: "1rem" }}>
                 OKU
               </Link>
             </div>
@@ -175,17 +175,17 @@ export default function Home() {
 
           <div className={styles.punkCard} style={{ borderLeft: "6px solid var(--neon-yellow)" }}>
             <div>
-              <span className={styles.cardTag}>2026 // GELİŞTİRME GÜNLÜĞÜ</span>
-              <h3 className={styles.cardTitle}>Kişisel Portfolyomu Neden Baştan Yarattım?</h3>
+              <span className={styles.cardTag}>2026 // AI & SYSTEMS</span>
+              <h3 className={styles.cardTitle}>Building Reliable RAG Systems: Beyond Basic Vectors</h3>
               <p className={styles.cardText}>
-                Hazır şablonlar yerine kendi fanzinimi kodlama sürecim, karşılaştığım eğlenceli zorluklar ve ilgi alanlarım.
+                Chunking stratejileri, hybrid arama ve cross-encoder reranking ile halüsinasyonları önleme rehberi.
               </p>
             </div>
             <div className={styles.cardFooter}>
               <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.85rem", color: "var(--wall-gray)" }}>
-                4 dk okuma süresi
+                6 min read
               </span>
-              <Link href="/yazilar" className="punk-btn" style={{ padding: "6px 12px", fontSize: "1rem" }}>
+              <Link href="/yazilar/building-reliable-rag-systems" className="punk-btn" style={{ padding: "6px 12px", fontSize: "1rem" }}>
                 OKU
               </Link>
             </div>

@@ -1,0 +1,271 @@
+/* ===========================
+   YAZILAR / ZINE PAGE
+   Punk Tech Blog Aesthetic
+   =========================== */
+
+.main {
+  min-height: 80vh;
+  padding: 20px 20px 60px;
+}
+
+/* Header Section */
+.headerSection {
+  padding: 40px 0 50px;
+  border-bottom: 3px dashed var(--street-gray);
+  margin-bottom: 50px;
+}
+
+.headerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--neon-yellow);
+  color: var(--ink-black);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  padding: 6px 16px;
+  font-family: var(--font-marker);
+  font-size: 0.95rem;
+  transform: rotate(-1.5deg);
+  margin-bottom: 20px;
+}
+
+.pageTitle {
+  font-family: var(--font-comic);
+  font-size: clamp(3rem, 6vw, 5rem);
+  color: var(--neon-yellow);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 0.95;
+  text-shadow: 
+    4px 4px 0px var(--ink-black),
+    8px 8px 0px var(--neon-pink);
+  margin-bottom: 18px;
+}
+
+.titleAlt {
+  color: var(--paper-cream);
+  display: inline-block;
+}
+
+.pageSubtitle {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--wall-gray);
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* Articles List */
+.articlesList {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-bottom: 70px;
+}
+
+/* Post Card */
+.postCard {
+  background: var(--panel-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  padding: 32px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.postCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 0px var(--neon-pink);
+}
+
+.cardTape {
+  position: absolute;
+  top: -10px;
+  left: 30px;
+  width: 55px;
+  height: 18px;
+  background: var(--tape-yellow);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transform: rotate(-3deg);
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.categoryBadge {
+  font-family: var(--font-marker);
+  font-size: 0.8rem;
+  background: var(--neon-pink);
+  color: #ffffff;
+  padding: 4px 10px;
+  border: 2px solid var(--ink-black);
+  transform: rotate(-2deg);
+}
+
+.metaInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--wall-gray);
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.metaDivider {
+  color: var(--street-gray);
+}
+
+.postTitle {
+  font-family: var(--font-comic);
+  font-size: 2.2rem;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+
+.titleLink {
+  color: var(--paper-cream);
+  transition: color 0.15s ease;
+}
+
+.titleLink:hover {
+  color: var(--neon-yellow);
+}
+
+.postExcerpt {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--wall-gray);
+  line-height: 1.65;
+  margin-bottom: 24px;
+  max-width: 900px;
+}
+
+.footerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--street-gray);
+}
+
+.tagsGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Bottom Zine Box */
+.zineBox {
+  background: var(--panel-dark);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-hard);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.zineBox::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(
+    90deg,
+    var(--neon-pink),
+    var(--neon-yellow),
+    var(--accent-cyan)
+  );
+}
+
+.zineInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.zineBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-marker);
+  font-size: 0.85rem;
+  color: var(--neon-yellow);
+  margin-bottom: 8px;
+}
+
+.zineTitle {
+  font-family: var(--font-comic);
+  font-size: 2.2rem;
+  color: var(--paper-cream);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.zineDesc {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: var(--wall-gray);
+  max-width: 580px;
+  line-height: 1.6;
+}
+
+.zineActions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .postCard {
+    padding: 24px 18px;
+  }
+
+  .postTitle {
+    font-size: 1.7rem;
+  }
+
+  .footerRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footerRow a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .zineInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .zineActions {
+    width: 100%;
+  }
+
+  .zineActions a {
+    width: 100%;
+    justify-content: center;
+  }
+}
