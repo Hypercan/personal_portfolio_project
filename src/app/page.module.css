@@ -314,11 +314,4 @@
   .tagPills {
     justify-content: center;
   }
-
-  .neonSunCircle {
-    right: 50%;
-    transform: translate(50%, -50%);
-    width: 360px;
-    height: 360px;
-  }
 }
