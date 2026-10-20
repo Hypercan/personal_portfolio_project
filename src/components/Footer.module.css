@@ -78,7 +78,7 @@
   color: #ffffff;
   border-color: #ffffff;
   box-shadow: 4px 4px 0px #ffffff;
-  transform: translateY(-2px) rotate(1deg);
+  transform: translateY(-2px);
 }
 
 .bottomRow {

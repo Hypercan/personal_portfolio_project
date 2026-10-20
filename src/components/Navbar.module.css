@@ -112,7 +112,7 @@
   background: var(--neon-yellow);
   border: 2px solid var(--ink-black);
   box-shadow: 3px 3px 0px var(--ink-black);
-  transform: translateY(-2px) rotate(-1deg);
+  transform: translateY(-2px);
 }
 
 .navItemActive {

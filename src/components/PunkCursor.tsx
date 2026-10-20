@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Burst {
   id: number;
@@ -15,7 +15,7 @@ const PUNK_WORDS = ["BAM!", "POW!", "RADICAL!", "ZAP!", "YEAH!", "PUNK!", "NOISE
 const PUNK_COLORS = ["#FF007F", "#E6FF00", "#00F0FF", "#FFFDF5"];
 
 export default function PunkCursor() {
-  const [pos, setPos] = useState({ x: -100, y: -100 });
+  const cursorRef = useRef<HTMLDivElement>(null);
   const [isPointer, setIsPointer] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [bursts, setBursts] = useState<Burst[]>([]);
@@ -28,7 +28,10 @@ export default function PunkCursor() {
     }
 
     const handleMouseMove = (e: MouseEvent) => {
-      setPos({ x: e.clientX, y: e.clientY });
+      // Immediate 1:1 hardware synchronization without transition drift
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+      }
 
       // Check if hovering interactive element
       const target = e.target as HTMLElement | null;
@@ -69,7 +72,7 @@ export default function PunkCursor() {
       setIsClicking(false);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
 
@@ -84,40 +87,50 @@ export default function PunkCursor() {
 
   return (
     <>
-      {/* Custom Punk Pointer */}
+      {/* Outer position wrapper: absolutely 0 delay/drift */}
       <div
+        ref={cursorRef}
         style={{
           position: "fixed",
           top: 0,
           left: 0,
-          transform: `translate3d(${pos.x}px, ${pos.y}px, 0) translate(-50%, -50%) scale(${
-            isClicking ? 0.8 : isPointer ? 1.3 : 1
-          })`,
-          width: isPointer ? 32 : 24,
-          height: isPointer ? 32 : 24,
-          borderRadius: "50%",
           pointerEvents: "none",
           zIndex: 99999,
-          transition: "transform 0.08s ease-out, width 0.15s ease, height 0.15s ease, background 0.15s ease",
-          background: isPointer ? "var(--neon-yellow)" : "var(--neon-pink)",
-          border: "2px solid #000000",
-          boxShadow: isPointer
-            ? "0 0 14px var(--neon-yellow)"
-            : "0 0 10px var(--neon-pink)",
-          mixBlendMode: "difference",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          willChange: "transform",
+          transform: "translate3d(-100px, -100px, 0)",
         }}
       >
+        {/* Inner visual element: center-locked scaling only */}
         <div
           style={{
-            width: 4,
-            height: 4,
-            background: "#000",
+            width: 24,
+            height: 24,
             borderRadius: "50%",
+            transform: `translate(-50%, -50%) scale(${
+              isClicking ? 0.8 : isPointer ? 1.4 : 1
+            })`,
+            transition:
+              "transform 0.12s ease-out, background-color 0.15s ease, box-shadow 0.15s ease",
+            background: isPointer ? "var(--neon-yellow)" : "var(--neon-pink)",
+            border: "2px solid #000000",
+            boxShadow: isPointer
+              ? "0 0 14px var(--neon-yellow)"
+              : "0 0 10px var(--neon-pink)",
+            mixBlendMode: "difference",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
-        />
+        >
+          <div
+            style={{
+              width: 4,
+              height: 4,
+              background: "#000",
+              borderRadius: "50%",
+            }}
+          />
+        </div>
       </div>
 
       {/* Comic Bursts & Graffiti Splatters */}
